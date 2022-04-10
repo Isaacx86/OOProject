@@ -36,11 +36,15 @@ public class SearchGUI extends javax.swing.JFrame{
             for(File file: multiFile){
             	BufferedReader inputStream =null;
             	String liner;
+            	String data = jTextField1.getText();
             	try {
             		inputStream = new BufferedReader(new FileReader(file));
             		while((liner=inputStream.readLine()) != null) {
-            			jLabel5.setText(liner);
-            			System.out.print(liner);
+            			jLabel5.setText("File Contains" + liner);
+            			//System.out.print(liner);
+            			if(liner.contains(data)){
+            				System.out.print("Match Found in" +liner);
+            			}
             		}
             	}catch(IOException e) {
             		System.out.println(e);
