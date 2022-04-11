@@ -32,7 +32,7 @@ public class SearchGUI extends javax.swing.JFrame{
         int section = filechoose.showOpenDialog(jLabel1);
         if(section == JFileChooser.APPROVE_OPTION){
             File[] multiFile = filechoose.getSelectedFiles();
-            String fileName = "";
+            String fileName = " ";
             for(File file: multiFile){
             	BufferedReader inputStream =null;
             	String liner;
@@ -44,6 +44,11 @@ public class SearchGUI extends javax.swing.JFrame{
             			//System.out.print(liner);
             			if(liner.contains(data)){
             				System.out.print("Match Found in" +liner);
+            				jTextPane1.setText("Match Found in" + fileName + " on line " +liner);
+            			}
+            			else {
+            				System.out.print("No Match found");
+            				jTextPane1.setText("No Match found in" +fileName);
             			}
             		}
             	}catch(IOException e) {
