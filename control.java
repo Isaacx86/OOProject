@@ -5,6 +5,8 @@ public class control {
 	public static void main(String[] args) {
 		
 		try {
+			// Auto generation for the Looks and feels class of java swing generated with nimbus java
+		}
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
